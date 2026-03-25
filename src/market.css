@@ -1,0 +1,285 @@
+/* ── Index Card ─────────────────────────────────────────── */
+.index-card {
+  padding: 16px 18px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin: 8px;
+  width: 160px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.3s, box-shadow 0.15s, transform 0.15s;
+}
+
+.index-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.index-card.up  { border-color: rgba(34, 197, 94, 0.3); }
+.index-card.down { border-color: rgba(239, 68, 68, 0.3); }
+
+.index-card-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.index-card-price {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.index-card-price.up   { color: #16a34a; }
+.index-card-price.down { color: #dc2626; }
+.index-card-price.muted { color: #aaa; }
+
+.index-card-change {
+  font-size: 12px;
+}
+.index-card-change.up   { color: #16a34a; }
+.index-card-change.down { color: #dc2626; }
+
+
+/* ── Chart Modal ────────────────────────────────────────── */
+.chart-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.chart-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: min(1100px, 94vw);
+  height: min(640px, 88vh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid #e8e8e8;
+}
+
+.chart-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.chart-modal-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.04em;
+}
+
+.chart-modal-ltp {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: auto;
+}
+.chart-modal-ltp.up   { color: #16a34a; }
+.chart-modal-ltp.down { color: #dc2626; }
+
+.chart-modal-change {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.chart-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #999;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  margin-left: 8px;
+}
+
+.chart-modal-close:hover {
+  color: #333;
+  background: #f5f5f5;
+}
+
+.chart-modal-body {
+  flex: 1;
+  padding: 8px;
+  min-height: 0;
+}
+
+
+/* ── Chart container (used by LightweightChart) ─────────── */
+.chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Page layout ─────────────────────────────────────────── */
+.page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.index-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+/* Selected card state */
+.index-card.selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ── Charts area ─────────────────────────────────────────── */
+.charts-area {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.charts-area-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.charts-area-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+
+.charts-area-ltp {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: auto;
+}
+.charts-area-ltp.up   { color: #16a34a; }
+.charts-area-ltp.down { color: #dc2626; }
+
+.charts-area-change {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.charts-area-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #999;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+.charts-area-close:hover { color: #333; background: #f5f5f5; }
+
+/* ── ATM info bar ────────────────────────────────────────── */
+.atm-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+
+.atm-label {
+  font-weight: 700;
+  color: #9333ea;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.atm-strike {
+  font-weight: 700;
+  font-size: 14px;
+  color: #111;
+}
+
+.atm-expiry {
+  color: #666;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.atm-ready {
+  color: #16a34a;
+  font-size: 11px;
+}
+
+.atm-waiting {
+  color: #aaa;
+  font-size: 11px;
+}
+
+/* ── Two charts side by side ─────────────────────────────── */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #f0f0f0;
+  height: 380px;
+}
+
+@media (max-width: 768px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.chart-panel {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.chart-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.chart-panel-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chart-panel-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #9333ea;
+}
+
+.chart-panel-body {
+  flex: 1;
+  min-height: 0;
+  padding: 4px;
+}
